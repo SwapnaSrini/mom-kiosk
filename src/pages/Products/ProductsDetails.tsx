@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import { products } from "../../data/ProductData"
+import ProductImageCarousel from "../../components/ProductImageCarousel"
 import "./ProductsDetails.css"
 
 function ProductDetailsPage() {
@@ -23,16 +24,16 @@ if (!product) {
 
     <div className="products-details-layout">
 
-      <div className="products-details-image">
-        <img
-          src={product.thumbnailUrl}
-          alt={product.title}
+      <div className="product-details-image">
+       <ProductImageCarousel
+          imageUrls={product.imageUrls}
+          productName={product.name}
         />
       </div>
 
       <div className="products-details-info">
 
-        <h1>{product.title}</h1>
+        <h1>{product.name}</h1>
 
         <p>{product.condition}</p>
 
@@ -41,7 +42,7 @@ if (!product) {
         <p>Given away by {product.sellerName}</p>
 
         <button>
-          Contact Mom
+          I am interested
         </button>
 
       </div>

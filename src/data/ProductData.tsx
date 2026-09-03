@@ -3,9 +3,10 @@ import type { Product } from "../models/Product"
 export const products: Product[] = [
     {
     id: "1",
-    title: "Baby stroller",
+    name: "Baby stroller",
     synopsis: "Joie I-MAX 4 in 1 Stroller and Baby basket",
     category: "Strollers",
+    sellerName: "Katja Niels",
     condition: "Good condition",
     location: "Untergruppenbach",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Stroller",
@@ -13,7 +14,8 @@ export const products: Product[] = [
   },
   {
     id: "2",
-    title: "Baby clothes",
+    name: "Baby clothes",
+    sellerName: "Elsa Müller",
     synopsis: "Lupilu - 4 Onesies and 3 shorts, 60-69 cm",
     category: "Clothing",
     condition: "Like new",
@@ -23,8 +25,9 @@ export const products: Product[] = [
   },
   {
     id: "3",
-    title: "Baby bathtub",
+    name: "Baby bathtub",
     synopsis: "Fisher Price - can be used from new born",
+    sellerName: "Lena Bacher",
     category: "Bath",
     condition: "Good condition",
     location: "Sontheim",
@@ -33,8 +36,9 @@ export const products: Product[] = [
   },
     {
     id: "4",
-    title: "Baby Swing",
+    name: "Baby Swing",
     synopsis: "Joie - 4 kg upto 10 kgs",
+    sellerName: "Hannah Klaus",
     category: "Bath",
     condition: "With used marks",
     location: "Sontheim",
@@ -43,8 +47,9 @@ export const products: Product[] = [
   },
     {
     id: "5",
-    title: "Baby stroller",
+    name: "Baby stroller",
     synopsis: "Joie I-MAX 4 in 1 Stroller and Baby basket",
+    sellerName: "Jana Zimmermann",
     category: "Strollers",
     condition: "Good condition",
     location: "Untergruppenbach",
@@ -53,8 +58,9 @@ export const products: Product[] = [
   },
   {
     id: "6",
-    title: "Baby clothes",
+    name: "Baby clothes",
     synopsis: "Lupilu - 4 Onesies and 3 shorts, 60-69 cm",
+    sellerName: "Marlene Zimmer",
     category: "Clothing",
     condition: "Like new",
     location: "Böckingen",
@@ -63,8 +69,9 @@ export const products: Product[] = [
   },
   {
     id: "7",
-    title: "Baby bathtub",
+    name: "Baby bathtub",
     synopsis: "Fisher Price - can be used from new born",
+    sellerName: "Nicole Krimmer",
     category: "Bath",
     condition: "Good condition",
     location: "Sontheim",
@@ -73,8 +80,9 @@ export const products: Product[] = [
   },
     {
     id: "8",
-    title: "Baby Swing",
+    name: "Baby Swing",
     synopsis: "Joie - 4 kg upto 10 kgs",
+    sellerName: "Jüte Brenner",
     category: "Bath",
     condition: "With used marks",
     location: "Sontheim",
