@@ -53,7 +53,7 @@ Responses use standard HTTP status codes (`201` Created, `204` No Content,
 ## Getting Started
 
 ### Prerequisites
-- Node.js [24.15.0] and npm[11.12.1]
+- Node.js 24.x and npm 11.x
 
 ### Run the backend
 
