@@ -10,7 +10,8 @@ give away used baby items, and organise events like playdates.
 
 - [x] Tabbed View of GiveAway, Polls and Events 
 - [x] Products Listed under GiveAway tab
-- [x] product Details Page with Image Carousel
+- [x] Product Details Page with Image Carousel
+- [x] Polls and Events Tabs are just placeholders for now
 - [ ] Event creation for playdates
 - [ ] User accounts and authentication
 
@@ -20,8 +21,8 @@ give away used baby items, and organise events like playdates.
 |----------|-------------------------------------|-------------|
 | Frontend | React, TypeScript, Vite             | In progress |
 | Backend  | Node.js, Express, TypeScript        | In progress |
-| Database | [planned: PostgreSQL or MongoDB]    | Planned     |
-| Testing  | [planned: Vitest / Jest, Supertest] | Planned     |
+| Database | planned: PostgreSQL or MongoDB      | Planned     |
+| Testing  | planned: Vitest / Jest, Supertest   | Planned     |
 | CI/CD    | GitHub Actions                      | Planned     |
 
 ## Project Structure
@@ -81,7 +82,11 @@ to the backend via `vite.config.ts`.
 
 ## Screenshots
 
+Products Listing
+
 <img width="1438" height="900" alt="image" src="https://github.com/user-attachments/assets/7587b1a2-6ddb-45cb-b020-4ea12015f9dc" />
+
+Products Details Listing
 
 <img width="1438" height="900" alt="image" src="https://github.com/user-attachments/assets/3a17b68c-05fa-4fa0-9a8b-442322759f8c" />
 
