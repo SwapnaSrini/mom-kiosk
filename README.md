@@ -4,13 +4,13 @@ A community web app for new mothers: connect with other moms nearby,
 give away used baby items, and organise events like playdates.
 
 > Development Status: Personal project, actively in development.
-> Frontend is functional with Give-Away product Page and product details page working; the Node.js backend is currently being built.
-
+> Frontend is functional with product(give-aways) Page and product details page working; the Node.js backend is currently being built.
+> Right now, the Give Aways and Products are considered the same. But in future, there is a type included in every product which determines if it's a GiveAway or is sold for a price. 
 ## Features
 
-- [x] Tabbed View of GiveAway, Polls and Events 
-- [x] Products Listed under GiveAway tab
-- [x] Product Details Page with Image Carousel
+- [x] Tabbed View of Products, Polls and Events 
+- [x] Products Listed under Products tab
+- [x] Product Details Page with Image Carousel on click on one Product
 - [x] Polls and Events Tabs are just placeholders for now
 - [ ] Event creation for playdates
 - [ ] User accounts and authentication
