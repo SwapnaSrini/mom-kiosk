@@ -1,75 +1,87 @@
-# React + TypeScript + Vite
+# MOM-KIOSK 👶
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A community web app for new mothers: connect with other moms nearby,
+give away used baby items, and organise events like playdates.
 
-Currently, two official plugins are available:
+> Development Status: Personal project, actively in development.
+> Frontend is functional with Give-Away product Page and product details page working; the Node.js backend is currently being built.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- [x] Tabbed View of GiveAway, Polls and Events 
+- [x] Products Listed under GiveAway tab
+- [x] product Details Page with Image Carousel
+- [ ] Event creation for playdates
+- [ ] User accounts and authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Layer    | Technology                          | Status      |
+|----------|-------------------------------------|-------------|
+| Frontend | React, TypeScript, Vite             | In progress |
+| Backend  | Node.js, Express, TypeScript        | In progress |
+| Database | [planned: PostgreSQL or MongoDB]    | Planned     |
+| Testing  | [planned: Vitest / Jest, Supertest] | Planned     |
+| CI/CD    | GitHub Actions                      | Planned     |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    mom-kiosk/
+    ├── src/            # React frontend
+    ├── public/         # Static assets
+    ├── server/         # Node.js / Express REST API
+    │   └── src/
+    │       └── index.ts
+    ├── vite.config.ts  # Includes /api proxy to the backend
+    └── package.json
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## REST API
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Base URL (local): `http://localhost:3000/api`
 
-```
+| Method | Endpoint         | Description            | Status      |
+|--------|------------------|------------------------|-------------|
+| GET    | `/items`         | List all giveaway items | In progress |
+| GET    | `/items/:id`     | Get one item            | In progress |
+| POST   | `/items`         | Create a new item       | In progress |
+| DELETE | `/items/:id`     | Delete an item          | In progress |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Responses use standard HTTP status codes (`201` Created, `204` No Content,
+`400` Bad Request for invalid input, `404` Not Found).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+- Node.js [24.15.0] and npm[11.12.1]
 
-```
+### Run the backend
+
+    cd server
+    npm install
+    npm run dev
+
+The API runs on `http://localhost:3000`.
+
+### Run the frontend
+
+    npm install
+    npm run dev
+
+The app runs on `http://localhost:5173`. Requests to `/api` are proxied
+to the backend via `vite.config.ts`.
+
+## Roadmap
+
+1. REST API for giveaway items (Express + TypeScript)
+2. Persistent storage with a database
+3. API tests and frontend tests
+4. CI pipeline with GitHub Actions
+5. Events and playdate organisation
+6. Authentication
+
+## Screenshots
+
+<img width="1438" height="900" alt="image" src="https://github.com/user-attachments/assets/7587b1a2-6ddb-45cb-b020-4ea12015f9dc" />
+
+<img width="1438" height="900" alt="image" src="https://github.com/user-attachments/assets/3a17b68c-05fa-4fa0-9a8b-442322759f8c" />
+
