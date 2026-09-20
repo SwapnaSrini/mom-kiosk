@@ -82,7 +82,7 @@ to the backend via `vite.config.ts`.
 
 ## Screenshots
 
-http://localhost:3000/items 
+http://localhost:3000/api/items 
 
 <img width="797" height="569" alt="image" src="https://github.com/user-attachments/assets/bdb59ef2-5658-4755-9beb-5bd507a1201e" />
 
