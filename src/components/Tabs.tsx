@@ -1,25 +1,26 @@
+import { NavLink } from "react-router-dom"
 import "./Tabs.css"
-type TabsProps = {
-    activeTab: string
-    onTabChange: (tab: string) => void
-}
 
-function Tabs ({activeTab , onTabChange }: TabsProps) {
+function Tabs () {
     return (
-        <nav className="tabs">
+/*         <nav className="tabs">
             <button onClick={() => onTabChange("products")}
                 className={activeTab === "products" ? "tab active" : "tab"}>
                 Products
-            </button>
-            <button onClick={() => onTabChange("polls")}
-                className={activeTab === "polls" ? "tab active" : "tab"}>
+            </button> */
+        <nav className="tabs">
+            <NavLink to="/products">
+                Products
+            </NavLink>
+            <NavLink to="/polls">
                 Polls
-            </button>
-            <button onClick={() => onTabChange("events")}
-                className={activeTab === "events" ? "tab active" : "tab"}>
+            </NavLink>
+            <NavLink to="/events">
                 Events
-            </button>
+            </NavLink>
         </nav>
+
+
     )
 }
 export default Tabs

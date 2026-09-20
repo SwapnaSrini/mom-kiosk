@@ -1,9 +1,14 @@
 export type Product = {
     id: string
-    title: string
-    description: string
+    name: string
+    synopsis: string
     location: string
     condition: string
     category?: string
-    imageUrl: string
+    thumbnailUrl: string
+    imageUrls: string[]
+    sellerName?: string,
+    ageRange?: string,
+    brand?: string,
+    description?: string
 }
