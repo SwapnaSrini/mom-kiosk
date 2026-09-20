@@ -9,6 +9,7 @@ export const products: Product[] = [
     sellerName: "Katja Niels",
     condition: "Good condition",
     location: "Untergruppenbach",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Stroller",
     imageUrls: ["https://placehold.co/300x200?text=Str","https://placehold.co/300x200?text=oller","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -20,6 +21,7 @@ export const products: Product[] = [
     category: "Clothing",
     condition: "Like new",
     location: "Böckingen",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Clothes",
     imageUrls: ["https://placehold.co/300x200?text=Clo","https://placehold.co/300x200?text=thes","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -31,6 +33,7 @@ export const products: Product[] = [
     category: "Bath",
     condition: "Good condition",
     location: "Sontheim",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Bathtub",
     imageUrls: ["https://placehold.co/300x200?text=Bath","https://placehold.co/300x200?text=tub","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -42,6 +45,7 @@ export const products: Product[] = [
     category: "Bath",
     condition: "With used marks",
     location: "Sontheim",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Swing",
     imageUrls: ["https://placehold.co/300x200?text=Swi","https://placehold.co/300x200?text=ng","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -53,6 +57,7 @@ export const products: Product[] = [
     category: "Strollers",
     condition: "Good condition",
     location: "Untergruppenbach",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Stroller",
     imageUrls: ["https://placehold.co/300x200?text=Str","https://placehold.co/300x200?text=oller","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -64,6 +69,7 @@ export const products: Product[] = [
     category: "Clothing",
     condition: "Like new",
     location: "Böckingen",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Clothes",
     imageUrls: ["https://placehold.co/300x200?text=Clo","https://placehold.co/300x200?text=thes","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -75,6 +81,7 @@ export const products: Product[] = [
     category: "Bath",
     condition: "Good condition",
     location: "Sontheim",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Bathtub",
     imageUrls: ["https://placehold.co/300x200?text=Bath","https://placehold.co/300x200?text=tub","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },
@@ -86,6 +93,7 @@ export const products: Product[] = [
     category: "Bath",
     condition: "With used marks",
     location: "Sontheim",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     thumbnailUrl: "https://placehold.co/300x200?text=Baby+Swing",
     imageUrls: ["https://placehold.co/300x200?text=Swi","https://placehold.co/300x200?text=ng","https://placehold.co/300x200?text=Ba","https://placehold.co/300x200?text=By"]
   },

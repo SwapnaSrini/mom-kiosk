@@ -23,30 +23,38 @@ if (!product) {
     </Link>
 
     <div className="products-details-layout">
-
+     <section className="product-gallery">
       <div className="product-details-image">
        <ProductImageCarousel
           imageUrls={product.imageUrls}
           productName={product.name}
         />
       </div>
+     </section>
 
-      <div className="products-details-info">
+     <section className="product-info">
+       <div className="products-details-info">
 
         <h1>{product.name}</h1>
 
-        <p>{product.condition}</p>
+        <p className="product-description">{product.description}</p>
 
-        <p>📍 {product.location}</p>
+        <p className="product-condition">{product.condition}</p>
 
-        <p>Given away by {product.sellerName}</p>
+        <p className="product-location">📍 {product.location}</p>
 
-        <button>
+        <p className="product-price">Free</p>
+
+        <p className="product-seller">Given away by {product.sellerName}</p>
+
+        <button className="contact-button">
           I am interested
         </button>
 
       </div>
 
+
+     </section>
     </div>
 
   </main>
