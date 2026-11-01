@@ -1,29 +1,28 @@
-import type { Product } from "../models/Product"
-import "./ProductItemCard.css"
-import { Link } from "react-router-dom"
+import type { Product } from '../models/Product'
+import './ProductItemCard.css'
+import { Link } from 'react-router-dom'
 
 type ProductProps = {
-   Item: Product
+  Item: Product
 }
-function ProductItemCard({ Item } : ProductProps ) {
+function ProductItemCard({ Item }: ProductProps) {
   return (
-<Link className="productitem-card-link" to={`/products/${Item.id}`}>
+    <Link className="productitem-card-link" to={`/products/${Item.id}`}>
+      <article className="productitem-card">
+        <img
+          className="productitem-image"
+          src={Item.thumbnailUrl}
+          alt={Item.name}
+        />
 
-<article className="productitem-card">
-  
-      <img className="productitem-image"
-        src={Item.thumbnailUrl}
-        alt={Item.title}
-      />
+        <h3 className="productitem-card-title">{Item.name}</h3>
 
-      <h3 className="productitem-card-title">{Item.title}</h3>
+        <p className="productitem-card-description">{Item.synopsis}</p>
 
-      <p className="productitem-card-description">{Item.synopsis}</p>
+        <p className="productitem-card-condition">{Item.condition}</p>
 
-      <p className="productitem-card-condition">{Item.condition}</p>
-
-      <p className="productitem-card-location">📍 {Item.location}</p>
-    </article>
+        <p className="productitem-card-location">📍 {Item.location}</p>
+      </article>
     </Link>
   )
 }
