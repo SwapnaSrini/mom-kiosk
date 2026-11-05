@@ -11,7 +11,7 @@
 .main-image img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 12px;
 }
 .carousel-thumbnails {
@@ -45,7 +45,6 @@
 }
 
 @media (min-width: 768px) {
-
   .image-carousel {
     flex-direction: row;
     align-items: flex-start;
@@ -75,5 +74,4 @@
   .main-image img {
     aspect-ratio: 1 / 1;
   }
-
 }
