@@ -15,13 +15,6 @@
   gap: 48px;
 }
 
-.product-details-image img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
 .product-details-info {
   padding: 20px 0;
 }
@@ -40,7 +33,7 @@
   font-size: 16px;
 }
 @media (min-width: 768px) {
-  .products-details-layout {
+  .product-details-layout {
     grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
     gap: 48px;
     align-items: start;
@@ -65,7 +58,7 @@
 }
 
 .product-condition {
-    margin: 0 16px 16px 16px;
+  margin: 0 16px 16px 16px;
 }
 
 .product-price {

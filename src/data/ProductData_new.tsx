@@ -126,14 +126,12 @@ export const products: Product[] = [
   {
     id: '8',
     name: 'Kids Train set',
-    synopsis:
-      'Toddler Train set from brand Fisher Price made out of wood. minor used stains in the wooden track and plastic exterior of the train. works absolutely fine. kids love it and it keeps them engaged for hours.',
-    category: 'Toys',
+    synopsis: 'Toddler Train set from brand Fisher Price made out of wood.',
     sellerName: 'Jutta Brenner',
     condition: 'Like new',
     location: 'Leingarten',
     description:
-      "Cute toddler backpack, just the right size for Kita: fits a change of clothes, a snack box and a water bottle. Chest strap so it doesn't slide off small shoulders, and a name tag inside. Used for a few weeks only. Pickup in Leingarten or I can bring it to Heilbronn city centre.",
+      'Toddler Train set from brand Fisher Price made out of wood. minor used stains in the wooden track and plastic exterior of the train. works absolutely fine. kids love it and it keeps them engaged for hours. Pickup in Leingarten or I can bring it to Heilbronn city centre.',
     thumbnailUrl: '/images/products/train_set/train_set_thumbnail.jpg',
     imageUrls: [
       '/images/products/train_set/train_set_1.jpg',

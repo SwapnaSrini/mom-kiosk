@@ -19,7 +19,7 @@ function ProductDetailsPage() {
         ← Back to Products
       </Link>
 
-      <div className="products-details-layout">
+      <div className="product-details-layout">
         <section className="product-gallery">
           <div className="product-details-image">
             <ProductImageCarousel

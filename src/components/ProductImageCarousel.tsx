@@ -10,11 +10,13 @@ function ProductImageCarousel({
 }: ProductImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
-    <div className="main-image">
-      <img
-        src={imageUrls[currentIndex]}
-        alt={`${productName} image ${currentIndex + 1}`}
-      />
+    <div className="image-carousel">
+      <div className="main-image">
+        <img
+          src={imageUrls[currentIndex]}
+          alt={`${productName} image ${currentIndex + 1}`}
+        />
+      </div>
       <div className="carousel-thumbnails">
         {imageUrls.map((imageUrl, index) => (
           <button
