@@ -10,7 +10,7 @@ function ProductItemCard({ Item }: ProductProps) {
     <Link className="productitem-card-link" to={`/products/${Item.id}`}>
       <article className="productitem-card">
         <img
-          className="productitem-image"
+          className="productitem-card-image"
           src={Item.thumbnailUrl}
           alt={Item.name}
         />
