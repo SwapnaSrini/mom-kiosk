@@ -73,8 +73,8 @@ function ProductsListPage() {
         <>
           <h2>
             {city
-              ? `Baby items in ${city.name}${city.parent ? `, ${city.parent}` : ''}`
-              : 'Baby items near you'}
+              ? `Items in ${city.name}${city.parent ? `, ${city.parent}` : ''}`
+              : 'Items near you'}
           </h2>
 
           {city && visibleProducts.length === 0 ? (
