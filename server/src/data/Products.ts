@@ -1,4 +1,4 @@
-import type { Product } from '../models/Product'
+import type { Product } from '../models/Product.js'
 
 // Demo data for MOM-KIOSK: giveaways around Heilbronn.
 export const products: Product[] = [
@@ -89,9 +89,9 @@ export const products: Product[] = [
     thumbnailUrl:
       '/images/products/baby_high_chair/baby_high_chair_thumbnail.jpg',
     imageUrls: [
-      '/images/products/baby_high_chair/baby_high_chair_thumbnail.jpg',
-      '/images/products/baby_high_chair/baby_high_chair_thumbnail.jpg',
-      '/images/products/baby_high_chair/baby_high_chair_thumbnail.jpg',
+      '/images/products/baby_high_chair/baby_high_chair_1.jpg',
+      '/images/products/baby_high_chair/baby_high_chair_2.jpg',
+      '/images/products/baby_high_chair/baby_high_chair_3.jpg',
     ],
   },
   {
@@ -109,7 +109,7 @@ export const products: Product[] = [
     imageUrls: [
       '/images/products/baby_shoes/baby_shoes_1.jpg',
       '/images/products/baby_shoes/baby_shoes_2.jpg',
-      '/images/products/baby_shoes/baby_shoes_3.jpg',
+      '/images/products/baby_shoes/baby_shoes_thumbnail.jpg',
     ],
   },
   {
