@@ -1,0 +1,59 @@
+.stepper {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 420px;
+}
+.step {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #777;
+}
+/* Line from the previous circle's centre to this circle's centre */
+.step:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 50%;
+  width: 100%;
+  height: 3px;
+  background: #c4c4c4;
+}
+.step.done:not(:first-child)::before {
+  background: #3bb3ad;
+}
+
+.step-circle {
+  position: relative; /* sits above the line */
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #c4c4c4;
+  color: #fff;
+  font-weight: 700;
+}
+.step.done .step-circle {
+  background: #3bb3ad;
+}
+.step.done .step-label {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+/* Small white dot inside the grey circles */
+.step:not(.done) .step-circle::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}

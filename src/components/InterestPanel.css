@@ -1,0 +1,68 @@
+.interest-panel {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.interest-panel.requested {
+  background: #fff8e1;
+  border-color: #f2c94c;
+}
+.interest-panel.reserved {
+  background: #e8f5e9;
+  border-color: #6fcf97;
+}
+.interest-panel.picked-up {
+  background: #f1f1f1;
+}
+.interest-panel p {
+  margin: 4px 0;
+  color: #333;
+}
+.interest-title {
+  font-weight: 700;
+}
+.interest-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.interest-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 999px;
+  background: #000;
+  color: whitesmoke;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+.interest-actions .link-button {
+  background: none;
+  color: #555;
+  text-decoration: underline;
+  padding: 8px 4px;
+}
+
+/* shared badge, used on cards and in My requests */
+.status-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.status-badge.requested {
+  background: #fff3cd;
+  color: #8a6d00;
+}
+.status-badge.reserved {
+  background: #d4edda;
+  color: #1e6b34;
+}
+.status-badge.picked-up {
+  background: #e2e3e5;
+  color: #444;
+}

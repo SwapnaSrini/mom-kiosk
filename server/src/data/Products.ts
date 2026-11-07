@@ -1,4 +1,4 @@
-import type { Product } from '../models/Product'
+import type { Product } from '../models/Product.js'
 
 // Demo data for MOM-KIOSK: giveaways around Heilbronn.
 export const products: Product[] = [

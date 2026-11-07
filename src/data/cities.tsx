@@ -1,4 +1,9 @@
-export type City = { name: string; aliases?: string[]; districts?: string[] }
+export type City = {
+  name: string
+  aliases?: string[]
+  districts?: string[]
+  parent?: string
+}
 
 export const cities: City[] = [
   {
@@ -58,9 +63,21 @@ export function normalize(text: string): string {
 
 export function findCity(input: string): City | undefined {
   const key = normalize(input)
-  return cities.find((city) =>
-    [city.name, ...(city.aliases ?? [])].some((n) => normalize(n) === key),
-  )
+
+  for (const city of cities) {
+    // 1. City name or alias: "Heilbronn", "Munich"
+    if (
+      [city.name, ...(city.aliases ?? [])].some((n) => normalize(n) === key)
+    ) {
+      return city
+    }
+    // 2. District: "Sontheim" → only Sontheim, but remember it belongs to Heilbronn
+    const district = city.districts?.find((d) => normalize(d) === key)
+    if (district) {
+      return { name: district, parent: city.name }
+    }
+  }
+  return undefined
 }
 
 export function isInCity(location: string, city: City): boolean {
