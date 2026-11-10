@@ -5,6 +5,7 @@ import ProductsListPage from './pages/Products/ProductsList'
 import ProductDetailsPage from './pages/Products/ProductsDetails'
 import ViewPollsPage from './pages/Polls/ViewPolls'
 import ViewEventsPage from './pages/Events/ViewEvents'
+import CreateEventPage from './pages/Events/CreateEvent'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Tabs from './components/Tabs'
 
@@ -25,6 +26,8 @@ function App() {
           <Route path="/polls" element={<ViewPollsPage />} />
 
           <Route path="/events" element={<ViewEventsPage />} />
+
+          <Route path="/events/new" element={<CreateEventPage />} />
         </Routes>
       </BrowserRouter>
     </div>
