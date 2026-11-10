@@ -1,6 +1,6 @@
 # MOM-KIOSK 👶
 
-A community web app for new mothers: connect with other moms nearby,
+A community web app for new parents/caregivers: connect with other parents nearby,
 give away used baby items, and organise events like playdates.
 
 > Development Status: Personal project, actively in development.
@@ -8,11 +8,11 @@ give away used baby items, and organise events like playdates.
 > Right now, the Give Aways and Products are considered the same. But in future, there is a type included in every product which determines if it's a GiveAway or is sold for a price. 
 ## Features
 
-- [x] Tabbed View of Products, Polls and Events 
+- [x] Tabbed View of Giveaways, Polls and Events 
 - [x] Products Listed under Products tab
 - [x] Product Details Page with Image Carousel on click on one Product
 - [x] Polls and Events Tabs are just placeholders for now
-- [ ] Event creation for playdates
+- [x] Event creation for playdates
 - [ ] User accounts and authentication
 
 ## Tech Stack
@@ -42,10 +42,10 @@ Base URL (local): `http://localhost:3000/api`
 
 | Method | Endpoint         | Description            | Status      |
 |--------|------------------|------------------------|-------------|
-| GET    | `/items`         | List all giveaway items | Done        |
-| GET    | `/items/:id`     | Get one item            | In progress |
-| POST   | `/items`         | Create a new item       | In progress |
-| DELETE | `/items/:id`     | Delete an item          | In progress |
+| GET    | `/products`         | List all giveaway items | Done |
+| GET    | `/products/:id`     | Get one item            | Done |
+| POST   | `/products`         | Create a new item       | Done |
+| DELETE | `/products/:id`     | Delete an item          | Done |
 
 Responses use standard HTTP status codes (`201` Created, `204` No Content,
 `400` Bad Request for invalid input, `404` Not Found).
