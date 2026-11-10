@@ -1,5 +1,5 @@
 import express, { type Request, type Response } from 'express'
-import { products } from './data/Products.js'
+import { products } from './data/products.js'
 const app = express()
 app.use(express.json())
 

@@ -5,10 +5,10 @@ type User = {
 function WelcomeMessage({ name }: User) {
   return (
     <div>
-      <h2 className="welcomeback-header">Welcome back, {name}!</h2>
+      <h2 className="welcomeback-header">Hello, {name}!</h2>
       <p>
-        Give away used baby items, connect with local moms, and plan play dates.
-        #momtribe
+        Give away or request used baby items, connect with parents or
+        caregivers, and plan playdates.
       </p>
     </div>
   )
