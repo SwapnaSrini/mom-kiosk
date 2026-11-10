@@ -49,7 +49,7 @@ function CreateEventPage() {
     if (Object.keys(found).length > 0) return
 
     addEvent({ ...form, organizer: 'You' })
-    navigate('/events', { state: { toast: 'Your playdate was created!' } })
+    navigate('/events', { state: { toast: 'Your event was created!' } })
   }
 
   return (
@@ -57,7 +57,7 @@ function CreateEventPage() {
       <Link to="/events" className="back-link">
         ← Back to events
       </Link>
-      <h2>Create a playdate</h2>
+      <h2>Create a children's event</h2>
 
       <form className="event-form" onSubmit={handleSubmit} noValidate>
         <label>
