@@ -4,6 +4,7 @@ import { useEvents } from '../../hooks/useEvents'
 import { AGE_RANGES, type ChildrenEvent } from '../../models/ChildrenEvent'
 import { todayISO } from '../../utils/dates'
 import './Events.css'
+import { draftEventDescription } from '../../api/aiService'
 
 type EventForm = Omit<ChildrenEvent, 'id' | 'organizer'>
 type FormErrors = Partial<Record<keyof EventForm, string>>
@@ -52,6 +53,43 @@ function CreateEventPage() {
     navigate('/events', { state: { toast: 'Your event was created!' } })
   }
 
+  const [aiLoading, setAiLoading] = useState(false)
+  const [aiError, setAiError] = useState('')
+  async function handleWriteForMe() {
+    setAiError('')
+    if (!form.title.trim() && !form.description.trim()) {
+      setAiError('Add a title or a few words in the description first.')
+      return
+    }
+
+    setAiLoading(true)
+    try {
+      const draft = await draftEventDescription({
+        title: form.title,
+        date: form.date,
+        time: form.time,
+        place: form.place,
+        city: form.city,
+        ageRange: form.ageRange,
+        notes: form.description, // what the user typed becomes the AI's notes
+      })
+      setForm((prev) => ({
+        ...prev,
+        title: prev.title.trim() ? prev.title : draft.title, // never overwrite the user's own title
+        description: draft.description,
+      }))
+      setErrors((prev) => {
+        const next = { ...prev }
+        delete next.title
+        delete next.description
+        return next
+      })
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : 'Something went wrong.')
+    } finally {
+      setAiLoading(false)
+    }
+  }
   return (
     <section className="create-event">
       <Link to="/events" className="back-link">
@@ -134,20 +172,38 @@ function CreateEventPage() {
           </select>
         </label>
 
-        <label>
-          Description
-          {/* ✨ "Write it for me" AI button comes here tomorrow */}
+        <div className="description-field">
+          <div className="description-header">
+            <label htmlFor="description">Description</label>
+            <button
+              type="button"
+              className="ai-button"
+              onClick={handleWriteForMe}
+              disabled={aiLoading}
+            >
+              {aiLoading ? 'Writing…' : '✨ Write it for me'}
+            </button>
+          </div>
           <textarea
+            id="description"
             rows={5}
             value={form.description}
             onChange={(e) => update('description', e.target.value)}
-            placeholder="What will you do? What should parents bring?"
+            placeholder='A few words are enough, e.g. "park, games, bring warm clothes"'
             aria-invalid={!!errors.description}
           />
           {errors.description && (
             <span className="field-error">{errors.description}</span>
           )}
-        </label>
+          {aiError && (
+            <span className="field-error" role="alert">
+              {aiError}
+            </span>
+          )}
+          <span className="ai-hint">
+            AI writes a draft from your details. You can edit it before saving.
+          </span>
+        </div>
 
         <button type="submit" className="primary-button">
           Create event
