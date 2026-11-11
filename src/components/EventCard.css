@@ -5,13 +5,13 @@
   padding: 20px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: var(--bg);
+  background: var(--surface);
 }
 .event-date {
   margin: 0;
   font-size: 14px;
   font-weight: 700;
-  color: #3bb3ad;
+  color: var(--accent-text);
 }
 .event-title {
   margin: 0 0 4px;

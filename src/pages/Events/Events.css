@@ -34,8 +34,8 @@
   padding: 10px 22px;
   border: none;
   border-radius: 999px;
-  background: #000;
-  color: whitesmoke;
+  background: var(--primary);
+  color: var(--on-primary);
   font: inherit;
   font-size: 15px;
   font-weight: 600;
@@ -43,7 +43,7 @@
   cursor: pointer;
 }
 .primary-button:hover {
-  background: #333;
+  background: var(--primary-hover);
 }
 
 /* Create form */
@@ -70,7 +70,7 @@
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text-h);
   font: inherit;
   font-size: 16px;
@@ -83,16 +83,16 @@
 .event-form select:focus,
 .event-form textarea:focus {
   outline: none;
-  border-color: var(--accent-border);
-  box-shadow: 0 0 0 4px var(--accent-bg);
+  border-color: var(--primary-border);
+  box-shadow: 0 0 0 4px var(--primary-soft);
 }
 .event-form [aria-invalid='true'] {
-  border-color: #d93025;
+  border-color: var(--error);
 }
 .field-error {
   font-size: 13px;
   font-weight: 400;
-  color: #d93025;
+  color: var(--error);
 }
 
 .form-row {
@@ -122,17 +122,17 @@
 }
 .ai-button {
   padding: 6px 14px;
-  border: 1px solid var(--accent-border);
+  border: 1px solid var(--primary-border);
   border-radius: 999px;
-  background: var(--accent-bg);
-  color: var(--accent);
+  background: var(--primary-soft);
+  color: var(--primary);
   font: inherit;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 }
 .ai-button:hover {
-  border-color: var(--accent);
+  border-color: var(--primary);
 }
 .ai-button:disabled {
   opacity: 0.6;

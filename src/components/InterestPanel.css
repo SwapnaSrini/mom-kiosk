@@ -5,15 +5,15 @@
   border: 1px solid var(--border);
 }
 .interest-panel.requested {
-  background: #fff8e1;
-  border-color: #f2c94c;
+  background: var(--warning-soft);
+  border-color: var(--warning);
 }
 .interest-panel.reserved {
-  background: #e8f5e9;
-  border-color: #6fcf97;
+  background: var(--success-soft);
+  border-color: var(--success);
 }
 .interest-panel.picked-up {
-  background: #f1f1f1;
+  background: var(--soft);
 }
 .interest-panel p {
   margin: 4px 0;
@@ -31,15 +31,15 @@
   padding: 8px 16px;
   border: none;
   border-radius: 999px;
-  background: #000;
-  color: whitesmoke;
+  background: var(--primary);
+  color: var(--on-primary);
   font: inherit;
   font-size: 15px;
   cursor: pointer;
 }
 .interest-actions .link-button {
   background: none;
-  color: #555;
+  color: var(--text);
   text-decoration: underline;
   padding: 8px 4px;
 }
@@ -54,14 +54,14 @@
   margin-bottom: 6px;
 }
 .status-badge.requested {
-  background: #fff3cd;
-  color: #8a6d00;
+  background: var(--warning-soft);
+  color: var(--warning-text);
 }
 .status-badge.reserved {
-  background: #d4edda;
-  color: #1e6b34;
+  background: var(--success-soft);
+  color: var(--success-text);
 }
 .status-badge.picked-up {
-  background: #e2e3e5;
-  color: #444;
+  background: var(--soft);
+  color: var(--text);
 }

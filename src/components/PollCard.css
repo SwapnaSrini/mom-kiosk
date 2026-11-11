@@ -5,7 +5,7 @@
   padding: 20px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: var(--bg);
+  background: var(--surface);
 }
 .poll-meta {
   margin: 0;
@@ -42,11 +42,11 @@
   font-size: 15px;
 }
 .poll-option:has(input:checked) {
-  border-color: #3bb3ad;
-  background: rgba(59, 179, 173, 0.08);
+  border-color: var(--primary);
+  background: var(--primary-soft);
 }
 .poll-option input {
-  accent-color: #3bb3ad;
+  accent-color: var(--primary);
 }
 
 .poll-results {
@@ -71,13 +71,13 @@
 .poll-bar {
   height: 8px;
   border-radius: 999px;
-  background: var(--border);
+  background: var(--soft);
   overflow: hidden;
 }
 .poll-bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: #3bb3ad;
+  background: var(--primary);
   transition: width 0.4s ease;
 }
 .poll-total {

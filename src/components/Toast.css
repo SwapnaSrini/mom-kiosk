@@ -9,17 +9,17 @@
   gap: 16px;
   max-width: min(92vw, 480px);
   padding: 14px 16px 14px 20px;
-  background: #1f1f1f;
-  color: whitesmoke;
+  background: var(--text-h);
+  color: var(--bg);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(47, 58, 57, 0.2);
   font-size: 15px;
   animation: toast-in 0.25s ease-out;
 }
 .toast-close {
   border: none;
   background: none;
-  color: whitesmoke;
+  color: var(--bg);
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
