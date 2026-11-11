@@ -35,8 +35,8 @@ function ViewEventsPage({
   if (locationFilter.kind === 'invalid') return null
 
   return (
-    <section>
-      <div className="events-header">
+    <section className="tab-page">
+      <div className="events-header page-header">
         <h2>
           {locationFilter.kind === 'city'
             ? `Children Events in ${cityLabel(locationFilter.city)}`

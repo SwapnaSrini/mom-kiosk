@@ -39,7 +39,7 @@ function ProductsListPage({
   )
 
   return (
-    <section>
+    <section className="tab-page">
       {loading ? (
         <p>Loading items…</p>
       ) : loadError ? (

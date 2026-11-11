@@ -109,3 +109,14 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.tab-page {
+  padding-bottom: 32px;
+}
+.tab-page > h2,
+.tab-page .page-header {
+  margin-bottom: 20px;
+}
+.tab-page .page-header h2 {
+  margin: 0;
+}
