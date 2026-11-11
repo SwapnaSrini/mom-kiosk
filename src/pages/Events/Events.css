@@ -1,0 +1,144 @@
+.events-header {
+  /* Title in the centre column, button in the right one, matching the other tabs' centred titles */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.events-header h2 {
+  grid-column: 2;
+}
+.events-header .primary-button {
+  justify-self: end;
+}
+@media (max-width: 600px) {
+  .events-header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .events-header h2 {
+    grid-column: 1;
+  }
+  .events-header .primary-button {
+    justify-self: center;
+  }
+}
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.primary-button:hover {
+  background: var(--primary-hover);
+}
+
+/* Create form */
+.create-event {
+  max-width: 640px;
+}
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 16px;
+}
+.event-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+.event-form input,
+.event-form select,
+.event-form textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-h);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+}
+.event-form textarea {
+  resize: vertical;
+}
+.event-form input:focus,
+.event-form select:focus,
+.event-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-border);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.event-form [aria-invalid='true'] {
+  border-color: var(--error);
+}
+.field-error {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--error);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+.event-form .primary-button {
+  align-self: flex-start;
+}
+
+.description-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.description-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.ai-button {
+  padding: 6px 14px;
+  border: 1px solid var(--primary-border);
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ai-button:hover {
+  border-color: var(--primary);
+}
+.ai-button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.ai-hint {
+  font-size: 13px;
+  opacity: 0.8;
+}

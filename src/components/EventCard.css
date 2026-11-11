@@ -1,0 +1,32 @@
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.event-date {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-text);
+}
+.event-title {
+  margin: 0 0 4px;
+  color: var(--text-h);
+}
+.event-meta {
+  margin: 0;
+  font-size: 14px;
+}
+.event-description {
+  margin: 8px 0 0;
+  font-size: 15px;
+}
+.event-organizer {
+  margin: 8px 0 0;
+  font-size: 13px;
+  opacity: 0.8;
+}

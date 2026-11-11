@@ -1,8 +1,8 @@
 .productitem-card {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  background: white;
+  background: var(--surface);
   max-width: 280px;
 }
 .productitem-card-link {

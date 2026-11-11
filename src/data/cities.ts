@@ -1,3 +1,8 @@
+export type LocationFilter =
+  | { kind: 'all' } // nothing searched: show everything
+  | { kind: 'city'; city: City } // valid city: filter by it
+  | { kind: 'invalid' } // unknown text: show nothing
+
 export type City = {
   name: string
   aliases?: string[]
@@ -85,4 +90,20 @@ export function isInCity(location: string, city: City): boolean {
   return [city.name, ...(city.districts ?? [])].some(
     (n) => normalize(n) === key,
   )
+}
+
+// Works for products, events, etc.
+export function filterByLocation<T>(
+  items: T[],
+  filter: LocationFilter,
+  getLocation: (item: T) => string,
+): T[] {
+  if (filter.kind === 'all') return items
+  if (filter.kind === 'invalid') return []
+  return items.filter((item) => isInCity(getLocation(item), filter.city))
+}
+
+// "Sontheim, Heilbronn" or "Heilbronn"
+export function cityLabel(city: City): string {
+  return city.parent ? `${city.name}, ${city.parent}` : city.name
 }
