@@ -34,7 +34,10 @@ function App() {
 
           <Route path="/products/:id" element={<ProductDetailsPage />} />
 
-          <Route path="/polls" element={<ViewPollsPage />} />
+          <Route
+            path="/polls"
+            element={<ViewPollsPage locationFilter={locationFilter} />}
+          />
 
           <Route
             path="/events"

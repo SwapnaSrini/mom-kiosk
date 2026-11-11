@@ -10,6 +10,9 @@ export type ChildrenEvent = {
   organizer: string
 }
 
+// Data a page can pass to the Create event form to pre-fill it
+export type EventPrefill = Partial<Omit<ChildrenEvent, 'id' | 'organizer'>>
+
 export const AGE_RANGES = [
   '0–12 months',
   '1–2 years',

@@ -1,7 +1,11 @@
 import { useState, type SubmitEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useEvents } from '../../hooks/useEvents'
-import { AGE_RANGES, type ChildrenEvent } from '../../models/ChildrenEvent'
+import {
+  AGE_RANGES,
+  type ChildrenEvent,
+  type EventPrefill,
+} from '../../models/ChildrenEvent'
 import { todayISO } from '../../utils/dates'
 import './Events.css'
 import { draftEventDescription } from '../../api/aiService'
@@ -35,7 +39,9 @@ function validate(form: EventForm): FormErrors {
 function CreateEventPage() {
   const { addEvent } = useEvents()
   const navigate = useNavigate()
-  const [form, setForm] = useState<EventForm>(EMPTY_FORM)
+  const location = useLocation()
+  const prefill = (location.state as { prefill?: EventPrefill } | null)?.prefill
+  const [form, setForm] = useState<EventForm>({ ...EMPTY_FORM, ...prefill })
   const [errors, setErrors] = useState<FormErrors>({})
 
   // One typed setter for every field
@@ -95,7 +101,15 @@ function CreateEventPage() {
       <Link to="/events" className="back-link">
         ← Back to events
       </Link>
-      <h2>Create a children's event</h2>
+      <h2>
+        Create a children's event
+        {prefill && (
+          <p className="ai-hint">
+            Pre-filled from the poll. Add a time and place, then let ✨ write
+            the description.
+          </p>
+        )}
+      </h2>
 
       <form className="event-form" onSubmit={handleSubmit} noValidate>
         <label>

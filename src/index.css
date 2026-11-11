@@ -1,15 +1,38 @@
+/* Sage & Clay palette. Use these variables instead of typing colors in component CSS. */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  /* Neutrals */
+  --bg: #faf7f2; /* page background (warm cream) */
+  --surface: #ffffff; /* cards, inputs */
+  --soft: #f1ece4; /* tab bar, progress tracks, quiet fills */
+  --border: #e3dcd2;
+  --muted: #c9c1b5; /* inactive steps, disabled bits */
+  --text: #5e6664; /* body text */
+  --text-h: #2f3a39; /* headings, labels */
+
+  /* Primary (sage-teal): buttons, active tab, links, selected states */
+  --primary: #3f7d78;
+  --primary-hover: #336864;
+  --on-primary: #ffffff; /* text on primary */
+  --primary-soft: #e3efed; /* selected option, focus ring */
+  --primary-border: rgba(63, 125, 120, 0.5);
+
+  /* Accent (clay): small highlights such as tags and dates */
+  --accent: #c8775a; /* backgrounds and large text only */
+  --accent-text: #a85a3f; /* readable small accent text */
+
+  /* Status */
+  --warning: #e9c46a;
+  --warning-soft: #fbf1d6;
+  --warning-text: #7a5a12;
+  --success: #5c9a6b;
+  --success-soft: #e4f0e6;
+  --success-text: #2f6b3e;
+  --error: #c0533f;
+
+  --code-bg: var(--soft);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(47, 58, 57, 0.1) 0 10px 15px -3px,
+    rgba(47, 58, 57, 0.05) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -32,15 +55,31 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --bg: #1e2423;
+    --surface: #272e2d;
+    --soft: #2f3735;
+    --border: #3a4341;
+    --muted: #4a5452;
+    --text: #b9c2bf;
+    --text-h: #eef1ef;
+
+    --primary: #7fb8b1;
+    --primary-hover: #96c7c1;
+    --on-primary: #16201f;
+    --primary-soft: rgba(127, 184, 177, 0.16);
+    --primary-border: rgba(127, 184, 177, 0.5);
+
+    --accent: #e0a084;
+    --accent-text: #e0a084;
+
+    --warning: #d9b45a;
+    --warning-soft: rgba(217, 180, 90, 0.16);
+    --warning-text: #e6c778;
+    --success: #84bc90;
+    --success-soft: rgba(132, 188, 144, 0.16);
+    --success-text: #9fcda9;
+    --error: #e07f6c;
+
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -108,4 +147,15 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.tab-page {
+  padding-bottom: 32px;
+}
+.tab-page > h2,
+.tab-page .page-header {
+  margin-bottom: 20px;
+}
+.tab-page .page-header h2 {
+  margin: 0;
 }

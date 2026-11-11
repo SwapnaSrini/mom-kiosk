@@ -2,10 +2,10 @@
   display: flex;
   gap: 8px;
   padding: 8px;
-  background: #000000;
+  background: var(--soft);
   border-radius: 12px;
   margin: 20px 0;
-  color: whitesmoke;
+  color: var(--text);
 }
 
 .tabs a {
@@ -24,11 +24,13 @@
 }
 
 .tabs a.active {
-  background: rgb(165, 162, 162);
+  background: var(--primary);
+  color: var(--on-primary);
   font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(47, 58, 57, 0.12);
 }
 
-.tabs a.hover {
-   background: rgb(138, 129, 129);
+.tabs a:not(.active):hover {
+  background: var(--primary-soft);
+  color: var(--text-h);
 }
