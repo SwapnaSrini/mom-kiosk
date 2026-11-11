@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 
-const MODEL = 'claude-haiku-5-5' // fastest, cheapest model, ideal for short texts
+const MODEL = 'claude-haiku-5-5'
 
 export type EventDraftInput = {
   title: string
