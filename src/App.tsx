@@ -11,6 +11,7 @@ import Tabs from './components/Tabs'
 import { useState } from 'react'
 import LocationSearch from './components/LocationSearch'
 import type { LocationFilter } from './data/cities'
+import CreatePollPage from './pages/Polls/CreatePoll'
 
 function App() {
   const [locationFilter, setLocationFilter] = useState<LocationFilter>({
@@ -38,6 +39,8 @@ function App() {
             path="/polls"
             element={<ViewPollsPage locationFilter={locationFilter} />}
           />
+
+          <Route path="/polls/new" element={<CreatePollPage />} />
 
           <Route
             path="/events"
