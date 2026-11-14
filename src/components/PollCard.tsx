@@ -70,7 +70,8 @@ function PollCard({
           <h3 className="poll-question">{poll.question}</h3>
           <ul className="poll-results">
             {results.map((r) => {
-              const percent = Math.round((r.count / total) * 100)
+              const percent =
+                total > 0 ? Math.round((r.count / total) * 100) : 0
               return (
                 <li key={r.id} className={r.id === myVote ? 'mine' : ''}>
                   <div className="poll-result-label">
