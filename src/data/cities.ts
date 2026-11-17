@@ -1,6 +1,6 @@
 export type LocationFilter =
   | { kind: 'all' } // nothing searched: show everything
-  | { kind: 'city'; city: City } // valid city: filter by it
+  | { kind: 'city'; city: City; query: string } // valid city: filter by it; query is what the user typed, shown in headings
   | { kind: 'invalid' } // unknown text: show nothing
 
 export type City = {
@@ -103,7 +103,8 @@ export function filterByLocation<T>(
   return items.filter((item) => isInCity(getLocation(item), filter.city))
 }
 
-// "Sontheim, Heilbronn" or "Heilbronn"
-export function cityLabel(city: City): string {
-  return city.parent ? `${city.name}, ${city.parent}` : city.name
+export function toLocationFilter(text: string): LocationFilter {
+  if (!text.trim()) return { kind: 'all' }
+  const city = findCity(text)
+  return city ? { kind: 'city', city, query: text.trim() } : { kind: 'invalid' }
 }

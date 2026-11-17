@@ -3,11 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import EventCard from '../../components/EventCard'
 import Toast from '../../components/Toast'
 import { useEvents } from '../../hooks/useEvents'
-import {
-  cityLabel,
-  filterByLocation,
-  type LocationFilter,
-} from '../../data/cities'
+import { filterByLocation, type LocationFilter } from '../../data/cities'
 import './Events.css'
 
 function ViewEventsPage({
@@ -39,7 +35,7 @@ function ViewEventsPage({
       <div className="events-header page-header">
         <h2>
           {locationFilter.kind === 'city'
-            ? `Children Events in ${cityLabel(locationFilter.city)}`
+            ? `Children Events in ${locationFilter.query}`
             : 'Upcoming children events'}
         </h2>
         <Link to="/events/new" className="primary-button">

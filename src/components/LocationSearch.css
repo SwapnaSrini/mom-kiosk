@@ -89,3 +89,36 @@
     padding: 10px 16px;
   }
 }
+
+/* Collapsible wrapper: App toggles .is-open by route.
+   Animating grid rows 0fr -> 1fr lets the height ease without a fixed max-height. */
+.search-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    grid-template-rows 0.3s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+.search-collapse.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.search-collapse-inner {
+  min-height: 0;
+  overflow: hidden;
+  /* Room for the 4px focus ring so overflow: hidden doesn't clip it */
+  padding: 0 4px;
+  margin: 0 -4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-collapse {
+    transition: none;
+  }
+}
