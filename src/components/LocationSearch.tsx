@@ -1,30 +1,22 @@
 import { useState, type SubmitEvent } from 'react'
-import { findCity, type LocationFilter } from '../data/cities'
 import './LocationSearch.css'
 
+type LocationSearchProps = {
+  initialQuery: string
+  invalid: boolean
+  onSearch: (text: string) => void
+}
+
 function LocationSearch({
-  onChange,
-}: {
-  onChange: (filter: LocationFilter) => void
-}) {
-  const [query, setQuery] = useState('')
-  const [error, setError] = useState('')
+  initialQuery,
+  invalid,
+  onSearch,
+}: LocationSearchProps) {
+  const [query, setQuery] = useState(initialQuery)
 
   function handleSearch(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (query.trim() === '') {
-      setError('')
-      onChange({ kind: 'all' })
-      return
-    }
-    const city = findCity(query)
-    if (!city) {
-      setError('Type the name of a city in Germany')
-      onChange({ kind: 'invalid' })
-      return
-    }
-    setError('')
-    onChange({ kind: 'city', city })
+    onSearch(query)
   }
 
   return (
@@ -39,9 +31,9 @@ function LocationSearch({
         />
         <button type="submit">Search</button>
       </form>
-      {error && (
+      {invalid && (
         <p className="search-error" role="alert">
-          {error}
+          Type the name of a city in Germany
         </p>
       )}
     </div>

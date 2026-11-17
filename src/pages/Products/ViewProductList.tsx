@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react'
 import ProductItemCard from '../../components/ProductItemCard'
 import { fetchProducts } from '../../api/products'
 import type { Product } from '../../models/Product'
-import {
-  cityLabel,
-  filterByLocation,
-  type LocationFilter,
-} from '../../data/cities'
+import { filterByLocation, type LocationFilter } from '../../data/cities'
 import './ProductsList.css'
 
 function ProductsListPage({
@@ -41,7 +37,10 @@ function ProductsListPage({
   return (
     <section className="tab-page">
       {loading ? (
-        <p>Loading items…</p>
+        <p>
+          Loading items please wait…(backend is hosted on Render for free, it
+          takes about a minute to wake up)
+        </p>
       ) : loadError ? (
         <p className="search-error" role="alert">
           {loadError}
@@ -50,7 +49,7 @@ function ProductsListPage({
         <>
           <h2>
             {locationFilter.kind === 'city'
-              ? `Baby items in ${cityLabel(locationFilter.city)}`
+              ? `Baby items in ${locationFilter.query}`
               : 'Baby items near you'}
           </h2>
           {locationFilter.kind === 'city' && visibleProducts.length === 0 ? (
