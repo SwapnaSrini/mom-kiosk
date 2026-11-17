@@ -2,11 +2,7 @@ import { useCallback, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import PollCard from '../../components/PollCard'
 import Toast from '../../components/Toast'
-import {
-  cityLabel,
-  filterByLocation,
-  type LocationFilter,
-} from '../../data/cities'
+import { filterByLocation, type LocationFilter } from '../../data/cities'
 import { usePolls } from '../../hooks/usePolls'
 import { usePollVotes } from '../../hooks/usePollVotes'
 import { CURRENT_USER, pollToEvent } from '../../models/Poll'
@@ -37,7 +33,7 @@ function ViewPollsPage({ locationFilter }: { locationFilter: LocationFilter }) {
       <div className="page-header polls-header">
         <h2>
           {locationFilter.kind === 'city'
-            ? `Polls in ${cityLabel(locationFilter.city)}`
+            ? `Polls in ${locationFilter.query}`
             : 'Community polls'}
         </h2>
         <Link to="/polls/new" className="primary-button">

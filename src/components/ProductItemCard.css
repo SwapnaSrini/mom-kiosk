@@ -3,7 +3,6 @@
   border-radius: 12px;
   overflow: hidden;
   background: var(--surface);
-  max-width: 280px;
 }
 .productitem-card-link {
   text-decoration: none;

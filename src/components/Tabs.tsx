@@ -1,17 +1,13 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import './Tabs.css'
 
 function Tabs() {
+  const { search } = useLocation()
   return (
-    /*         <nav className="tabs">
-            <button onClick={() => onTabChange("products")}
-                className={activeTab === "products" ? "tab active" : "tab"}>
-                Products
-            </button> */
     <nav className="tabs">
-      <NavLink to="/products">Giveaways</NavLink>
-      <NavLink to="/polls">Polls</NavLink>
-      <NavLink to="/events">Events</NavLink>
+      <NavLink to={{ pathname: '/products', search }}>Giveaways</NavLink>
+      <NavLink to={{ pathname: '/polls', search }}>Polls</NavLink>
+      <NavLink to={{ pathname: '/events', search }}>Events</NavLink>
     </nav>
   )
 }
