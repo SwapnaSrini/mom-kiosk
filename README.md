@@ -34,16 +34,16 @@ The free backend sleeps when idle, so the first request after a break can take u
 
 ## Tech stack
 
-| Layer | Technology | Status |
-|---|---|---|
-| Frontend | React 19, TypeScript, Vite, React Router | Done |
-| Backend | Node.js, Express, TypeScript (run with `tsx`) | Done |
-| AI | Claude API (Claude Haiku) via `@anthropic-ai/sdk`, called only from the server | Done |
-| Hosting | Vercel (frontend), Render (API) | Done |
-| Continuous deployment | Vercel and Render auto-deploy on every merge to `main` | Done |
-| Database | PostgreSQL | Planned |
-| Testing | Vitest, React Testing Library, Supertest | Planned |
-| CI | GitHub Actions (lint, type-check, test, build) | Planned |
+| Layer                 | Technology                                                                     | Status  |
+| --------------------- | ------------------------------------------------------------------------------ | ------- |
+| Frontend              | React 19, TypeScript, Vite, React Router                                       | Done    |
+| Backend               | Node.js, Express, TypeScript (run with `tsx`)                                  | Done    |
+| AI                    | Claude API (Claude Haiku) via `@anthropic-ai/sdk`, called only from the server | Done    |
+| Hosting               | Vercel (frontend), Render (API)                                                | Done    |
+| Continuous deployment | Vercel and Render auto-deploy on every merge to `main`                         | Done    |
+| Database              | PostgreSQL                                                                     | Planned |
+| Testing               | Vitest, React Testing Library, Supertest                                       | Planned |
+| CI                    | GitHub Actions (lint, type-check, test, build)                                 | Planned |
 
 ## Architecture
 
@@ -58,6 +58,25 @@ flowchart LR
 
 - The frontend always calls `/api/...`. Locally, Vite proxies it to `localhost:3000`; in production, a Vercel rewrite forwards it to Render. No CORS setup is needed.
 - The Claude API key lives only on the server (`ANTHROPIC_API_KEY`), never in the browser.
+
+## Vision: one place for local family life
+
+Parents today search many places: family education centres, children's bazaars (Kinderbasare), city event calendars and second-hand marketplaces. MOM-KIOSK aims to bring these together per city, while keeping its core free and parent-to-parent.
+
+**How external sources will be connected**
+
+| Approach                               | Used when                            | Example                                                                    |
+| -------------------------------------- | ------------------------------------ | -------------------------------------------------------------------------- |
+| Official feed or API (iCal, RSS, REST) | The provider offers one              | Importing an organisation's event calendar                                 |
+| Organisation accounts                  | The provider has no feed             | Family centres or Kinderbasar teams post their own events                  |
+| Link-out cards                         | Content stays on the provider's site | "More baby items in Heilbronn" on a second-hand marketplace                |
+| ~~Scraping~~                           | Never                                | Breaks terms of use and database rights, and fails whenever a page changes |
+
+**Planned changes to the event model**
+
+- `source`: `community` (posted by a parent) or `organisation` (posted by a verified provider)
+- `price`: `free` or `paid`, with a **"Free only"** filter
+- `externalUrl` and provider name for attribution, so paid courses link to the provider instead of being joined in MOM-KIOSK
 
 ## Design decisions
 
@@ -91,18 +110,19 @@ flowchart LR
 
 Base URL (local): `http://localhost:3000/api` · Production: `https://mom-kiosk.vercel.app/api`
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/health` | Server status, used to wake the server before a demo |
-| GET | `/products` | List all giveaway items |
-| GET | `/products/:id` | Get one item (`404` if it doesn't exist) |
-| POST | `/ai/event-description` | Draft an event title and description from the given details |
+| Method | Endpoint                | Description                                                 |
+| ------ | ----------------------- | ----------------------------------------------------------- |
+| GET    | `/health`               | Server status, used to wake the server before a demo        |
+| GET    | `/products`             | List all giveaway items                                     |
+| GET    | `/products/:id`         | Get one item (`404` if it doesn't exist)                    |
+| POST   | `/ai/event-description` | Draft an event title and description from the given details |
 
 `POST /ai/event-description` takes `title`, `date`, `time`, `place`, `city`, `ageRange` and `notes` (all optional strings, length-limited) and returns `{ "title": "...", "description": "..." }`. It answers `400` if neither a title nor notes are given, `429` when the hourly AI budget is used up, and `502` if the AI call fails.
 
 ## Getting started
 
 ### Prerequisites
+
 - Node.js 24.x and npm 11.x
 - An Anthropic API key, only needed for the AI feature
 
@@ -124,10 +144,10 @@ The app runs on `http://localhost:5173`. Requests to `/api` are proxied to the b
 
 ## Deployment
 
-| Part | Platform | Settings |
-|---|---|---|
-| Frontend | Vercel | Vite preset, root `./`, `vercel.json` rewrites `/api/*` to Render |
-| API | Render (free) | Root `server`, build `npm install`, start `npm start`, env var `ANTHROPIC_API_KEY` |
+| Part     | Platform      | Settings                                                                           |
+| -------- | ------------- | ---------------------------------------------------------------------------------- |
+| Frontend | Vercel        | Vite preset, root `./`, `vercel.json` rewrites `/api/*` to Render                  |
+| API      | Render (free) | Root `server`, build `npm install`, start `npm start`, env var `ANTHROPIC_API_KEY` |
 
 Both redeploy automatically on every merge to `main`.
 
